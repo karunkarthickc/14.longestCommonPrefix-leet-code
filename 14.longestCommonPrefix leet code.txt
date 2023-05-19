@@ -1,0 +1,20 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+       Arrays.sort(strs);//arange the string in ascending order
+       String str1=strs[0];//assign the small string to str1 and the large string to str2
+       String str2=strs[strs.length-1];
+       int index=0;
+       while(index<str1.length()){//loop until the index reaches the end of the first string
+           if(str1.charAt(index)==str2.charAt(index)){//compare until the char matches
+               index++;
+           }
+           else if(index==0){
+               return "";//if no char matches return ""
+           }
+       else{
+           break;
+       }
+       }
+       return str1.substring(0,index);//return the common prifix from  0 to index
+    }
+}
